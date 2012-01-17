@@ -28,10 +28,10 @@
 		<java.version>1.6</java.version>
 		<junit.version>4.10</junit.version>
 		<jms.version>1.1.1</jms.version>
-		<slf4j.version>1.6.3</slf4j.version>
+		<slf4j.version>1.6.4</slf4j.version>
 		<activemq.version>5.5.1</activemq.version>
-		<logback.version>0.9.30</logback.version>
-		<xbean.version>3.8</xbean.version>
+		<logback.version>1.0.0</logback.version>
+		<xbean.version>3.9</xbean.version>
 		<jaxb.version>2.2.2</jaxb.version>
 		<stax.version>1.0.1</stax.version>
 
@@ -43,15 +43,15 @@
 
 		<maven.clean.plugin>2.4.1</maven.clean.plugin>
 		<maven.compiler.plugin>2.3.2</maven.compiler.plugin>
-		<maven.dependency.plugin>2.3</maven.dependency.plugin>
+		<maven.dependency.plugin>2.4</maven.dependency.plugin>
 		<maven.deploy.plugin>2.7</maven.deploy.plugin>
 		<maven.eclipse.plugin>2.8</maven.eclipse.plugin>
 		<maven.idea.plugin>2.2</maven.idea.plugin>
 		<maven.resources.plugin>2.5</maven.resources.plugin>
 		<maven.source.plugin>2.1.2</maven.source.plugin>
-		<maven.surefire.plugin>2.10</maven.surefire.plugin>
+		<maven.surefire.plugin>2.11</maven.surefire.plugin>
 		<maven.tomcat.plugin>1.1</maven.tomcat.plugin>
-		<maven.jetty.plugin>8.0.1.v20110908</maven.jetty.plugin>
+		<maven.jetty.plugin>8.1.0.RC0</maven.jetty.plugin>
 		<maven.war.plugin>2.1.1</maven.war.plugin>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.test.failure.ignore>false</maven.test.failure.ignore>

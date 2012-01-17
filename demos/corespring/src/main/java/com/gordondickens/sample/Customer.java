@@ -10,10 +10,10 @@ public interface Customer {
 	public String getLastName();
 
 	public void setLastName(String lastName);
-	
-	public PhoneNumber getPhoneNumber();
 
-	public void setPhoneNumber(PhoneNumber pn);
+//	public PhoneNumber getPhoneNumber();
+//
+//	public void setPhoneNumber(PhoneNumber pn);
 
 
 }

@@ -15,7 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author gordon
  * 
  */
-@ContextConfiguration(value = "/META-INF/spring/bean-post-processing-context.xml")
+@ContextConfiguration
+//@ContextConfiguration(value = "/META-INF/spring/bean-post-processing-context.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BeanPostProcessingTests {
 	private final Logger logger = LoggerFactory

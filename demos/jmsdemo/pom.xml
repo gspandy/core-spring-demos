@@ -22,26 +22,26 @@
 
 	<properties>
 		<roo.version>1.1.5.RELEASE</roo.version>
-		<spring.version>3.1.0.RC1</spring.version>
-		<aspectj.version>1.6.12.M2</aspectj.version>
-		<slf4j.version>1.6.3</slf4j.version>
+		<spring.version>3.1.0.RELEASE</spring.version>
+		<aspectj.version>1.6.12.RELEASE</aspectj.version>
+		<slf4j.version>1.6.4</slf4j.version>
 		<java.version>1.6</java.version>
-		<logback.version>0.9.30</logback.version>
+		<logback.version>1.0.0</logback.version>
 <!-- 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin> -->
 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin>
-		<maven.assembly.plugin>2.2.1</maven.assembly.plugin>
+		<maven.assembly.plugin>2.2.2</maven.assembly.plugin>
 		<maven.clean.plugin>2.4.1</maven.clean.plugin>
 		<maven.compiler.plugin>2.3.2</maven.compiler.plugin>
-		<maven.dependency.plugin>2.3</maven.dependency.plugin>
+		<maven.dependency.plugin>2.4</maven.dependency.plugin>
 		<maven.deploy.plugin>2.7</maven.deploy.plugin>
 		<maven.eclipse.plugin>2.7</maven.eclipse.plugin>
 <!-- 		<maven.eclipse.plugin>2.8</maven.eclipse.plugin> -->
 		<maven.idea.plugin>2.2</maven.idea.plugin>
 		<maven.resources.plugin>2.5</maven.resources.plugin>
 		<maven.source.plugin>2.1.2</maven.source.plugin>
-		<maven.surefire.plugin>2.10</maven.surefire.plugin>
+		<maven.surefire.plugin>2.11</maven.surefire.plugin>
 		<maven.tomcat.plugin>1.1</maven.tomcat.plugin>
-		<maven.jetty.plugin>8.0.1.v20110908</maven.jetty.plugin>
+		<maven.jetty.plugin>8.1.0.RC0</maven.jetty.plugin>
 		<maven.war.plugin>2.1.1</maven.war.plugin>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

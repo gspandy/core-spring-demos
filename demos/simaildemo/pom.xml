@@ -10,11 +10,11 @@
 
 	<properties>
 		<activation.version>1.1.1</activation.version>
-		<aspectj.version>1.6.12.M2</aspectj.version>
+		<aspectj.version>1.6.12.RELEASE</aspectj.version>
 		<cglib.version>2.2.2</cglib.version>
 		<commons.beanutils.version>1.8.3</commons.beanutils.version>
 		<commons.cli.version>1.2</commons.cli.version>
-		<commons.codec.version>1.5</commons.codec.version>
+		<commons.codec.version>1.6</commons.codec.version>
 		<commons.collections.version>3.2.1</commons.collections.version>
 		<commons.dbcp.version>1.4</commons.dbcp.version>
 		<commons.digester.version>2.1</commons.digester.version>
@@ -23,15 +23,15 @@
 		<commons.io.version>2.1</commons.io.version>
 		<commons.lang.version>2.6</commons.lang.version>
 		<commons.net.version>3.0.1</commons.net.version>
-		<commons.pool.version>1.5.6</commons.pool.version>
+		<commons.pool.version>1.5.7</commons.pool.version>
 		<derby.version>10.8.1.2</derby.version>
 		<ehcache.version>2.4.6</ehcache.version>
 		<hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
 		<hibernate.jmx.version>3.5.6-Final</hibernate.jmx.version>
 		<hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
 		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
-		<hibernate.version>3.6.7.Final</hibernate.version>
-		<hsqldb.version>2.2.4</hsqldb.version>
+		<hibernate.version>3.6.8.Final</hibernate.version>
+		<hsqldb.version>2.2.6</hsqldb.version>
 		<jackson.version>1.9.0</jackson.version>
 		<java.version>1.6</java.version>
 		<javassist.version>3.12.1.GA</javassist.version>
@@ -39,44 +39,44 @@
 		<jms.version>1.1.1</jms.version>
 		<jstl.version>1.2</jstl.version>
 		<junit.version>4.8.2</junit.version>
-		<logback.version>0.9.30</logback.version>
-		<maven.ant.plugin>1.6</maven.ant.plugin>
+		<logback.version>1.0.0</logback.version>
+		<maven.ant.plugin>1.7</maven.ant.plugin>
 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin>
-		<maven.assembly.plugin>2.2.1</maven.assembly.plugin>
+		<maven.assembly.plugin>2.2.2</maven.assembly.plugin>
 		<maven.clean.plugin>2.4.1</maven.clean.plugin>
 		<maven.compiler.plugin>2.3.2</maven.compiler.plugin>
-		<maven.dependency.plugin>2.3</maven.dependency.plugin>
+		<maven.dependency.plugin>2.4</maven.dependency.plugin>
 		<maven.deploy.plugin>2.7</maven.deploy.plugin>
 		<maven.eclipse.plugin>2.7</maven.eclipse.plugin>
 		<maven.enforcer.plugin>1.0.1</maven.enforcer.plugin>
 		<maven.exec.plugin>1.2</maven.exec.plugin>
-		<maven.failsafe.plugin>2.10</maven.failsafe.plugin>
+		<maven.failsafe.plugin>2.11</maven.failsafe.plugin>
 		<maven.groovy.plugin>1.3</maven.groovy.plugin>
 		<maven.idea.plugin>2.2</maven.idea.plugin>
 		<maven.install.plugin>2.3.1</maven.install.plugin>
 		<maven.jar.plugin>2.3.1</maven.jar.plugin>
-		<maven.release.plugin>2.2.1</maven.release.plugin>
+		<maven.release.plugin>2.2.2</maven.release.plugin>
 		<maven.resources.plugin>2.5</maven.resources.plugin>
 		<maven.site.plugin>3.0</maven.site.plugin>
 		<maven.sonar.plugin>2.10</maven.sonar.plugin>
 		<maven.source.plugin>2.1.2</maven.source.plugin>
-		<maven.surefire.plugin>2.10</maven.surefire.plugin>
+		<maven.surefire.plugin>2.11</maven.surefire.plugin>
 		<maven.version.range>[2.2.1,3.1.0)</maven.version.range>
 		<maven.tomcat.plugin>1.1</maven.tomcat.plugin>
-		<maven.jetty.plugin>8.0.1.v20110908</maven.jetty.plugin>
+		<maven.jetty.plugin>8.1.0.RC0</maven.jetty.plugin>
 		<maven.versions.plugin>1.2</maven.versions.plugin>
 		<maven.war.plugin>2.1.1</maven.war.plugin>
 
-		<mockito.version>1.9.0-rc1</mockito.version>
+		<mockito.version>1.9.0</mockito.version>
 		<roo.version>1.2.0.M1</roo.version>
-		<slf4j.version>1.6.3</slf4j.version>
+		<slf4j.version>1.6.4</slf4j.version>
 		<servlet.version>2.5</servlet.version>
 		<spring.data.jpa.version>1.0.1.RELEASE</spring.data.jpa.version>
 		<spring.integration.version>2.1.0.BUILD-SNAPSHOT</spring.integration.version>
 		<spring.version>3.1.0.BUILD-SNAPSHOT</spring.version>
 		<spring.webflow.version>2.3.0.RELEASE</spring.webflow.version>
 		<validation.version>1.0.0.GA</validation.version>
-		<xbean.version>3.8</xbean.version>
+		<xbean.version>3.9</xbean.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.test.failure.ignore>false</maven.test.failure.ignore>
 	</properties>

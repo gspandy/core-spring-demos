@@ -4,6 +4,7 @@ import com.gordondickens.itemmanager.entity.MyBean;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import static org.powermock.api.mockito.PowerMockito.*;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(IdGenerator.class)
+//@PowerMockIgnore({"org.w3c.*", "javax.xml.*"})
 public class MyBeanTest {
     private static final Logger logger = LoggerFactory.getLogger(MyBeanTest.class);
 
