@@ -8,11 +8,11 @@
 
 	<!-- Configure your top level package below -->
 	<logger name="com.gordondickens" level="DEBUG" />
- 	<logger name="org.springframework.aop" level="trace" />
-	<logger name="org.springframework.test" level="debug" />
-	<logger name="org.junit" level="DEBUG" />
+ 	<!--<logger name="org.springframework.aop" level="trace" />-->
+	<!--<logger name="org.springframework.test" level="debug" />-->
+	<!--<logger name="org.junit" level="DEBUG" />-->
 
- 	<logger name="org.aspectj" level="trace" />
+ 	<!--<logger name="org.aspectj" level="trace" />-->
 
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
