@@ -1,0 +1,41 @@
+development mode --enabled true
+
+# Project Setup
+project --topLevelPackage com.gordondickens.simail --java 6 --projectName SpringIntegrationMail
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+download accept terms of use
+
+# Domain Object for Mail Recipient
+entity jpa --class ~.domain.Recipient --activeRecord false
+field string --fieldName recipientEmail --class ~.domain.Recipient
+field string --fieldName subject --class ~.domain.Recipient
+field string --fieldName messageBody --class ~.domain.Recipient
+
+test integration --entity ~.domain.Recipient
+
+repository jpa --interface ~.repository.RecipientRepository --entity ~.domain.Recipient
+service --interface ~.service.RecipientService --entity ~.domain.Recipient
+
+web mvc setup
+web mvc language --code es
+web mvc language --code de
+web mvc all --package ~.web
+json all --deepSerialize
+web mvc json all --package ~.web
+
+logging setup --level DEBUG
+
+system properties
+
+web mvc update tags
+
+addon upgrade all
+
+perform clean
+perform eclipse
+perform package
+
+web mvc embed twitter --searchTerm #springframework
+
+! mvn jetty:run
+

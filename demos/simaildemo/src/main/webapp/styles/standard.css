@@ -37,12 +37,12 @@ body {
 }
 
 #menu {
-    background: #eee;
-  	position:relative;
-  	float:left;  	
-  	left:0px;
-  	width:220px;
-  	margin-right:15px;
+	background: #eee;
+	position:relative;
+	float:left;  	
+	left:0px;
+	width:220px;
+	margin-right:15px;
 }
 
 #menu ul{
@@ -65,7 +65,7 @@ body {
 
 #menu h2 {
 	color: #fff;
-	background: #648C1D;
+	background: #005696;
 	text-transform: uppercase;
 	font-weight:bold;
 	font-size: 12px;
@@ -79,7 +79,7 @@ body {
 }
 
 #menu a:hover {
-	color: #648C1D;
+	color: #005696;
 	background: #fff;
 }
 
@@ -94,7 +94,19 @@ body {
 	float:left;
 }
 
-#footer a:link {color: #7db223;}
+#footer a:link {color: #607890;}
+
+.quicklinks {
+	clear:both; 
+	padding-bottom: 15px
+}
+.quicklinks span {
+	float: right;
+}
+
+table.navigation {
+	border: 0px;
+}
 
 label {
 	width:100px;
@@ -114,6 +126,7 @@ input, textarea, select {
 input.image {
 	border: none;
 	height: auto;
+	vertical-align: middle;
 }
 
 submit {
@@ -137,7 +150,7 @@ a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;}
 
 h1,h2,h3 {
 	font-family: Helvetica, sans-serif;
-	color: #7db223;
+	color: #607890;
 }
 
 h1 {
@@ -187,19 +200,19 @@ tr:nth-child(even) {
 }
 
 a:link {
-	color: #7db223;
+	color: #607890;
 }
 
 a:hover {
-	color: #456314;
+	color: #0000FF;
 }
 
 a:active {
-	color: #7db223;
+	color: #607890;
 }
 
 a:visited {
-	color: #7db223;
+	color: #607890;
 }
 
 li {
@@ -239,7 +252,7 @@ table td form {
 }
 
 table th {
-	font-size: 0.75em;
+	font-size: 0.9em;
 	text-align: left;
 	font-weight: bold;
 	color: #FFF;
@@ -253,6 +266,8 @@ table thead {
 }
 
 table a:link {color: #303030;}
+
+.utilbox {width: 18px;}
 
 caption {
 	caption-side: top;
@@ -336,16 +351,20 @@ fieldset th {
 	color:#888888;
 }
 
-.dijitTextarea{
-    min-height:5.5em !important;
-    max-height:22em !important;
-    overflow-y: auto !important;
-    max-width: 183px;
+.dijitArrowButton {
+	height: 20px;
+}
+
+.dijitTextArea{
+	min-height:5.5em !important;
+	max-height:22em !important;
+	overflow-y: auto !important;
+	max-width: 175px;
 }
 
 .RichTextEditable{
-    min-height:18em !important;
-    max-height:18em !important;
+	min-height:18em !important;
+	max-height:18em !important;
 }
 
 .flag {

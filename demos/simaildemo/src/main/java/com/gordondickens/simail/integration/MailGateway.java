@@ -1,21 +1,20 @@
 package com.gordondickens.simail.integration;
 
+import com.gordondickens.simail.domain.Recipient;
 import org.springframework.integration.annotation.Gateway;
-
-import com.gordondickens.simail.entity.Recipient;
 
 /**
  * This class extends FileTypeMap and provides data typing of files via their
  * file extension. It uses the <code>.mime.types</code> format.
- * <p>
- * 
+ * <p/>
+ * <p/>
  * <b>MIME types file search order:</b>
- * <p>
+ * <p/>
  * The MimetypesFileTypeMap looks in various places in the user's system for
  * MIME types file entries. When requests are made to search for MIME types in
  * the MimetypesFileTypeMap, it searches MIME types files in the following
  * order:
- * <p>
+ * <p/>
  * <ol>
  * <li>Programmatically added entries to the MimetypesFileTypeMap instance.
  * <li>The file <code>.mime.types</code> in the user's home directory.
@@ -24,10 +23,10 @@ import com.gordondickens.simail.entity.Recipient;
  * <li>The file or resource named <code>META-INF/mimetypes.default</code>
  * (usually found only in the <code>activation.jar</code> file).
  * </ol>
- * <p>
+ * <p/>
  * <b>MIME types file format:</b>
- * <p>
- * 
+ * <p/>
+ * <p/>
  * <code>
  * # comments begin with a '#'<br>
  * # the format is &lt;mime type> &lt;space separated file extensions><br>
@@ -38,6 +37,6 @@ import com.gordondickens.simail.entity.Recipient;
  * </code>
  */
 public interface MailGateway {
-	@Gateway
-	public void sendMail(Recipient recipient);
+    @Gateway
+    public void sendMail(Recipient recipient);
 }
