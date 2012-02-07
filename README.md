@@ -16,7 +16,7 @@ Simple JMS demo
 
 JmsOxmDemo
 ----------
-Demo code from blog: http://gordondickens.com/wordpress/2011/02/07/sending-beans-as-xml-with-jmstemplate/
+[Demo code from blog]: http://gordondickens.com/wordpress/2011/02/07/sending-beans-as-xml-with-jmstemplate/
 
 
 jmxitems
@@ -27,14 +27,19 @@ JMX demo - Viewable in jConsole
 mockitodemo
 ----------
 Demo using Mock Unit testing with JUnit, Mockito & PowerMock
-See blog: http://gordondickens.com/wordpress/2011/10/22/unit-testing-spring-with-mockito-powermock/
+[Blog]:  http://gordondickens.com/wordpress/2011/10/22/unit-testing-spring-with-mockito-powermock/
+
+orms
+----
+Demo set showing Spring 3.1 configuration of EclipseLink, OpenJpa, Hibernate &amp; DataNucleus without requiring persistence.xml
+
 
 Versions
 --------
-Spring: 3.1.0
-Slf4j: 1.6.4
-LogBack: 1.0.0
-JUnit: 4.10
+* Spring: 3.1.0
+* Slf4j: 1.6.4
+* LogBack: 1.0.0
+* JUnit: 4.10
 
 
 
@@ -49,8 +54,7 @@ Execute:
 Contact
 --------
 Gordon Dickens
-
-@gdickens
-www.linkedin.com/in/gordondickens
-http://technophile.gordondickens.com
-
+ 
+ * [@gdickens]: http://twitter.com/gdickens
+ * [Linkedin]: www.linkedin.com/in/gordondickens
+ * [Blog]: http://technophile.gordondickens.com
