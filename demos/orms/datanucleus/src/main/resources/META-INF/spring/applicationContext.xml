@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:property-placeholder location="classpath*:META-INF/spring/*.properties"/>
+
+    <context:component-scan base-package="com.gordondickens.orm">
+        <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+    </context:component-scan>
+
+    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
+        <property name="driverClassName" value="${database.driverClassName}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="testOnReturn" value="true"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="timeBetweenEvictionRunsMillis" value="1800000"/>
+        <property name="numTestsPerEvictionRun" value="3"/>
+        <property name="minEvictableIdleTimeMillis" value="1800000"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <tx:annotation-driven/>
+
+    <!-- NOTE: Do NOT use the "PersistenceUnit" property, it will override the "PackagesToScan" -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.gordondickens.orm.domain"/>
+        <!--<property name="entityManagerFactoryInterface">-->
+            <!--<bean class="org.datanucleus.api.jpa.JPAEntityManagerFactory">-->
+            <!--</bean>-->
+        <!--</property>-->
+        <property name="persistenceProviderClass" value="org.datanucleus.api.jpa.PersistenceProviderImpl"/>
+
+
+        <!-- SEE: org.datanucleus.PropertyNames for available properties -->
+
+        <property name="jpaProperties">
+            <util:properties>
+                <!--<prop key="datanucleus.ConnectionDriverName">${database.driverClassName}</prop>-->
+                <!--<prop key="datanucleus.ConnectionPassword">${database.password}</prop>-->
+                <!--<prop key="datanucleus.ConnectionURL">${database.url}</prop>-->
+                <!--<prop key="datanucleus.ConnectionUserName">${database.username}</prop>-->
+                <!--<prop key="datanucleus.jpa.addClassTransformer">false</prop>-->
+                <prop key="datanucleus.autoCreateColumns">false</prop>
+                <prop key="datanucleus.autoCreateConstraints">false</prop>
+                <prop key="datanucleus.autoCreateSchema">true</prop>
+                <prop key="datanucleus.autoCreateTables">true</prop>
+                <!--<prop key="datanucleus.mapping.Schema"></prop>-->
+                <!--<prop key="datanucleus.NontransactionalRead">true</prop>-->
+                <!--<prop key="datanucleus.NontransactionalWrite">true</prop>-->
+                <!--<prop key="datanucleus.rdbms.checkExistTablesOrViews">false</prop>-->
+                <prop key="datanucleus.rdbms.datastoreAdapterClassName">
+                    org.datanucleus.store.rdbms.adapter.H2Adapter
+                </prop>
+                <prop key="datanucleus.jpa.addClassTransformer">false</prop>
+                <prop key="datanucleus.rdbms.omitDatabaseMetaDataGetColumns">true</prop>
+                <prop key="datanucleus.storeManagerType">rdbms</prop>
+                <prop key="datanucleus.validateConstraints">false</prop>
+                <prop key="datanucleus.validateTables">false</prop>
+            </util:properties>
+        </property>
+    </bean>
+
+    <bean id="employeeService" class="com.gordondickens.orm.service.EmployeeServiceImpl"/>
+</beans>

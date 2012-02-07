@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.gordondickens.orm</groupId>
+        <artifactId>orms</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>com.gordondickens.orm</groupId>
+    <artifactId>OrmOpenJpa</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+    <name>OrmOpenJpa</name>
+
+    <properties>
+        <openjpa.version>2.1.1</openjpa.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.openjpa</groupId>
+            <artifactId>openjpa</artifactId>
+            <version>${openjpa.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-jms_1.1_spec</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+     </dependencies>
+
+    <build>
+        <plugins>
+            <!--<plugin>-->
+                <!--&lt;!&ndash; This plugin expects persistence.xml or openjpa.xml &ndash;&gt;-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>openjpa-maven-plugin</artifactId>-->
+                <!--<version>${maven.openjpa.plugin}</version>-->
+                <!--<configuration>-->
+                    <!--<includes>**/*.class</includes>-->
+                    <!--<addDefaultConstructor>true</addDefaultConstructor>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>enhancer</id>-->
+                        <!--<phase>process-classes</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>enhance</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<dependencies>-->
+                    <!--<dependency>-->
+                        <!--<groupId>org.apache.openjpa</groupId>-->
+                        <!--<artifactId>openjpa</artifactId>-->
+                        <!--<version>${openjpa.version}</version>-->
+                        <!--<exclusions>-->
+                            <!--<exclusion>-->
+                                <!--<groupId>commons-logging</groupId>-->
+                                <!--<artifactId>commons-logging</artifactId>-->
+                            <!--</exclusion>-->
+                            <!--<exclusion>-->
+                                <!--<groupId>org.apache.geronimo.specs</groupId>-->
+                                <!--<artifactId>geronimo-jms_1.1_spec</artifactId>-->
+                            <!--</exclusion>-->
+                        <!--</exclusions>-->
+                    <!--</dependency>-->
+                <!--</dependencies>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+</project>

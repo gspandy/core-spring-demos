@@ -1,0 +1,22 @@
+development mode --enabled true
+
+# Project Setup
+project --topLevelPackage com.gordondickens.orm --java 6 --projectName OrmOpenJpa
+# jpa setup --provider HIBERNATE --database H2_IN_MEMORY
+# jpa setup --provider OPENJPA --database H2_IN_MEMORY
+# jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
+jpa setup --provider DATANUCLEUS --database H2_IN_MEMORY
+
+download accept terms of use
+
+entity jpa --class ~.domain.Employee --activeRecord false --testAutomatically
+field string --fieldName firstName --class ~.domain.Employee
+field string --fieldName lastName --class ~.domain.Employee
+field string --fieldName comments --class ~.domain.Employee
+
+test integration --entity ~.domain.Employee
+
+repository jpa --interface ~.repository.EmployeeRepository --entity ~.domain.Employee
+service --interface ~.service.EmployeeService --entity ~.domain.Employee
+
+logging setup --level DEBUG

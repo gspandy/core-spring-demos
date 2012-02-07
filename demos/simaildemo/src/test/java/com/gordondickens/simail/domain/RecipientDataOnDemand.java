@@ -1,5 +1,6 @@
 package com.gordondickens.simail.domain;
 
+import com.gordondickens.simail.repository.RecipientRepository;
 import com.gordondickens.simail.service.RecipientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -9,7 +10,6 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -22,7 +22,7 @@ public class RecipientDataOnDemand {
     private List<Recipient> data;
 
     @Autowired
-    RecipientService itemService;
+    RecipientService recipientService;
 
     @Autowired
     com.gordondickens.simail.repository.RecipientRepository recipientRepository;
@@ -60,14 +60,14 @@ public class RecipientDataOnDemand {
         }
         Recipient obj = data.get(index);
         Long id = obj.getId();
-        return itemService.findRecipient(id);
+        return recipientService.findRecipient(id);
     }
 
     public Recipient getRandomRecipient() {
         init();
         Recipient obj = data.get(rnd.nextInt(data.size()));
         Long id = obj.getId();
-        return itemService.findRecipient(id);
+        return recipientService.findRecipient(id);
     }
 
     public boolean modifyRecipient(Recipient obj) {
@@ -77,7 +77,7 @@ public class RecipientDataOnDemand {
     public void init() {
         int from = 0;
         int to = 10;
-        data = itemService.findRecipientEntries(from, to);
+        data = recipientService.findRecipientEntries(from, to);
         if (data == null) {
             throw new IllegalStateException("Find entries implementation for 'Recipient' illegally returned null");
         }
@@ -89,11 +89,10 @@ public class RecipientDataOnDemand {
         for (int i = 0; i < 10; i++) {
             Recipient obj = getNewTransientRecipient(i);
             try {
-                itemService.saveRecipient(obj);
+                recipientService.saveRecipient(obj);
             } catch (ConstraintViolationException e) {
                 StringBuilder msg = new StringBuilder();
-                for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext(); ) {
-                    ConstraintViolation<?> cv = iter.next();
+                for (ConstraintViolation<?> cv : e.getConstraintViolations()) {
                     msg.append("[").append(cv.getConstraintDescriptor()).append(":").append(cv.getMessage()).append("=").append(cv.getInvalidValue()).append("]");
                 }
                 throw new RuntimeException(msg.toString(), e);
@@ -101,5 +100,13 @@ public class RecipientDataOnDemand {
             recipientRepository.flush();
             data.add(obj);
         }
+    }
+
+    public void setRecipientService(RecipientService recipientService) {
+        this.recipientService = recipientService;
+    }
+
+    public void setRecipientRepository(RecipientRepository recipientRepository) {
+        this.recipientRepository = recipientRepository;
     }
 }

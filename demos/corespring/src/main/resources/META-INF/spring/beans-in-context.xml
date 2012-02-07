@@ -10,7 +10,7 @@
 	-->
 	<context:annotation-config />
 
-	<bean id="SuperExample" class="com.gordondickens.sample.ExampleServiceToo"
+	<bean id="superExample" class="com.gordondickens.sample.ExampleServiceToo"
 		init-method="imInit" />
 
 	<bean class="com.gordondickens.sample.ExampleServiceToo" />

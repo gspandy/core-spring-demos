@@ -3,7 +3,10 @@ package com.gordondickens.simail.service;
 import com.gordondickens.simail.domain.Recipient;
 import com.gordondickens.simail.integration.MailGateway;
 import com.gordondickens.simail.repository.RecipientRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +16,7 @@ import java.util.List;
 @Service
 @Transactional
 public class RecipientServiceImpl implements RecipientService {
-
+    private static final Logger logger = LoggerFactory.getLogger(RecipientServiceImpl.class);
     @Autowired
     RecipientRepository recipientRepository;
 
@@ -37,7 +40,8 @@ public class RecipientServiceImpl implements RecipientService {
     }
 
     public List<Recipient> findRecipientEntries(int firstResult, int maxResults) {
-        return recipientRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / maxResults, maxResults)).getContent();
+        logger.debug("Finding Recipient Entries for first {} and max {}", firstResult, maxResults);
+        return recipientRepository.findAll(new PageRequest(firstResult / maxResults, maxResults)).getContent();
     }
 
     public void saveRecipient(Recipient recipient) {
@@ -49,4 +53,13 @@ public class RecipientServiceImpl implements RecipientService {
     public Recipient updateRecipient(Recipient recipient) {
         return recipientRepository.save(recipient);
     }
+
+    public void setRecipientRepository(RecipientRepository recipientRepository) {
+        this.recipientRepository = recipientRepository;
+    }
+
+    public void setMailGateway(MailGateway mailGateway) {
+        this.mailGateway = mailGateway;
+    }
+
 }

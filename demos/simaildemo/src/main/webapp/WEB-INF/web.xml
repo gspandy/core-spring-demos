@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         version="2.5"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-            http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <display-name>simail</display-name>
 
-    <description>Roo generated Spring Integration Mail Application</description>
+    <display-name>SpringIntegrationMail</display-name>
+    <description>Spring Integration Mail Application</description>
 
     <!-- Enable escaping of form submission contents -->
     <context-param>
@@ -19,12 +16,6 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath*:META-INF/spring/applicationContext*.xml</param-value>
     </context-param>
-
-    <filter>
-        <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
-        <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
-    </filter>
-
 
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
@@ -45,14 +36,9 @@
     </filter>
 
     <filter>
-        <filter-name>UrlRewriteFilter</filter-name>
-        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
-    </filter>
-    <filter-mapping>
         <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
+        <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+    </filter>
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
@@ -64,7 +50,7 @@
     </filter-mapping>
 
     <filter-mapping>
-        <filter-name>UrlRewriteFilter</filter-name>
+        <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
@@ -75,35 +61,41 @@
 
     <!-- Handles Spring requests -->
     <servlet>
-        <servlet-name>simail</servlet-name>
+        <servlet-name>SpringIntegrationMail</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/spring/webmvc-config.xml</param-value>
+            <param-value>WEB-INF/spring/webmvc-config.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>simail</servlet-name>
-        <url-pattern>/app/*</url-pattern>
+        <servlet-name>SpringIntegrationMail</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewStatusMessages</servlet-name>
+        <servlet-class>ch.qos.logback.classic.ViewStatusMessagesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewStatusMessages</servlet-name>
+        <url-pattern>/logbackStatus</url-pattern>
     </servlet-mapping>
 
     <session-config>
         <session-timeout>10</session-timeout>
     </session-config>
 
-    <welcome-file-list>
-        <welcome-file>index</welcome-file>
-    </welcome-file-list>
-
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
-        <location>/app/uncaughtException</location>
+        <location>/uncaughtException</location>
     </error-page>
 
     <error-page>
         <error-code>404</error-code>
-        <location>/app/resourceNotFound</location>
+        <location>/resourceNotFound</location>
     </error-page>
 </web-app>

@@ -260,17 +260,6 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>com.dp4j</groupId>-->
-                <!--<artifactId>dp4j</artifactId>-->
-                <!--<version>${dp4j.version}</version>-->
-                <!--<exclusions>-->
-                    <!--<exclusion>-->
-                        <!--<groupId>commons-lang</groupId>-->
-                        <!--<artifactId>commons-lang</artifactId>-->
-                    <!--</exclusion>-->
-                <!--</exclusions>-->
-            <!--</dependency>-->
 
             <!-- Logging with SLF4J & LogBack -->
             <dependency>
