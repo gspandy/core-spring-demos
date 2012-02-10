@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * User: gordon Date: 4/16/11 Time: 12:46 PM
  */
-@ContextConfiguration("classpath:/com/gordondickens/sijms/JmsSenderTests-context.xml")
+@ContextConfiguration("JmsSenderTests-context.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class JmsSenderTests {
 

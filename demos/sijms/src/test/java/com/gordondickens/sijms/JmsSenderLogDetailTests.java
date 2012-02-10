@@ -17,54 +17,40 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class JmsSenderLogDetailTests {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(JmsSenderLogDetailTests.class);
+    private static final Logger logger = LoggerFactory
+            .getLogger(JmsSenderLogDetailTests.class);
 
-	@Autowired
-	ApplicationContext applicationContext;
+    @Autowired
+    ApplicationContext applicationContext;
 
-	// @Autowired
-	// JmsTemplate jmsTemplate;
-	//
-	@Autowired
-	MyJmsGateway myJmsGateway;
+    @Autowired
+    MyJmsGateway myJmsGateway;
 
-	@Before
-	public void beforeEachTest() {
-	}
+    @Before
+    public void setup() {
+        logger.debug("********************");
+        String[] beans = applicationContext.getBeanDefinitionNames();
+        for (String o : beans) {
+            logger.debug("________________________");
+            logger.debug("BEAN = " + o);
+            logger.debug("\tType = " + applicationContext.getType(o));
+            String[] aliases = applicationContext.getAliases(o);
+            if (aliases != null && aliases.length > 0) {
+                for (String a : aliases) {
+                    logger.debug("\tAliased as: " + a);
+                }
+            }
+        }
 
-	@Before
-	public void setup() {
-		logger.debug("********************");
-		String[] beans = applicationContext.getBeanDefinitionNames();
-		for (String o : beans) {
-			logger.debug("________________________");
-			logger.debug("BEAN = " + o);
-			logger.debug("\tType = " + applicationContext.getType(o));
-			String[] aliases = applicationContext.getAliases(o);
-			if (aliases != null && aliases.length > 0) {
-				for (String a : aliases) {
-					logger.debug("\tAliased as: " + a);
-				}
-			}
-		}
+        logger.debug("********************");
+        logger.debug("*** Number of Beans = {} ***",
+                applicationContext.getBeanDefinitionCount());
+        logger.debug("********************");
+    }
 
-		logger.debug("********************");
-		logger.debug("*** Number of Beans = {} ***",
-				applicationContext.getBeanDefinitionCount());
-		logger.debug("********************");
-	}
-
-	@Test
-	public void testJmsSend() {
-		myJmsGateway.sendMyMessage("myHeaderValue", "MY PayLoad");
-		// Assert.assertNotNull(jmsTemplate.receiveAndConvert("my.inbound.queue"));
-
-	}
-
-	// @Test
-	// public void testNothingAndLikeIt() {
-	// Assert.assertTrue(true);
-	// }
-
+    @Test
+    public void testJmsSend() {
+        myJmsGateway.sendMyMessage("myHeaderValue", "MY PayLoad");
+        // Assert.assertNotNull(jmsTemplate.receiveAndConvert("my.inbound.queue"));
+    }
 }

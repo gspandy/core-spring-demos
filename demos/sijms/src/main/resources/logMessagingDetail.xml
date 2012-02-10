@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+    <appender name="jmslogfile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.home}/jmsApp.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${user.home}/jmsApp.%i.log.zip
+            </fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>3</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%date %level|%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- this app -->
+    <logger name="com.gordondickens.sijms" level="trace">
+        <appender-ref ref="jmslogfile"/>
+    </logger>
+
+    <!-- ActiveMQ -->
+    <logger name="org.apache.activemq" level="trace">
+        <appender-ref ref="jmslogfile"/>
+    </logger>
+
+    <!-- Spring -->
+    <logger name="org.springframework.integration" level="trace">
+        <appender-ref ref="jmslogfile"/>
+    </logger>
+    <logger name="org.springframework.beans" level="trace">
+        <appender-ref ref="jmslogfile"/>
+    </logger>
+</included>

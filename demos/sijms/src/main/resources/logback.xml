@@ -1,23 +1,34 @@
-<configuration>
-    
-	<jmxConfigurator />
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
 
-	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- To enable JMX Management -->
+    <jmxConfigurator />
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>%-5level %logger{5} - %msg%n</pattern>
+			<pattern>%-5level %logger{0}|%msg%n</pattern>
 		</encoder>
 	</appender>
+
+
+    <include resource="logMessagingDetail.xml" />
+
 
     <!-- this app -->
 	<logger name="com.gordondickens.sijms" level="debug" />
 
     <!-- ActiveMQ -->
-    <logger name="org.apache.activemq" level="warn"/>
+    <!--<logger name="org.apache.activemq" level="info"/>-->
 
     <!-- Spring -->
-    <logger name="org.springframework.jms" level="warn" />
-	<logger name="org.springframework.beans" level="warn" />
-	<logger name="org.springframework.integration" level="debug" />
+    <!--<logger name="org.springframework.jms" level="info" />-->
+	<!--<logger name="org.springframework.beans" level="warn" />-->
+	<!--<logger name="org.springframework.integration" level="trace" />-->
 
 
 	<root level="warn">

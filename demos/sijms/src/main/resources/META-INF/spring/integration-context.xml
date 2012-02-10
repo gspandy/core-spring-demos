@@ -4,11 +4,14 @@
        xmlns:jms="http://www.springframework.org/schema/integration/jms"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:si="http://www.springframework.org/schema/integration"
-       xsi:schemaLocation="http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms-2.0.xsd
-		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/integration/jms
+       http://www.springframework.org/schema/integration/jms/spring-integration-jms.xsd
+		http://www.springframework.org/schema/integration
+		http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
-              http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="classpath:META-INF/spring/amq-context.xml"/>
 
@@ -18,9 +21,7 @@
 
     <si:annotation-config/>
 
-    <si:poller default="true">
-        <si:interval-trigger interval="500"/>
-    </si:poller>
+    <si:poller default="true" fixed-rate="500"/>
 
     <!-- <si:logging-channel-adapter id="myRequestChannel" level="DEBUG" log-full-message="true"/> -->
     <si:channel id="myRequestChannel"/>
@@ -28,5 +29,7 @@
     <si:gateway id="myJmsGateway" service-interface="com.gordondickens.sijms.MyJmsGateway"
                 default-request-channel="myRequestChannel"/>
 
-	<jms:outbound-channel-adapter channel="myRequestChannel" connection-factory="connectionFactory" destination="my.inbound.queue"/>
+	<jms:outbound-channel-adapter channel="myRequestChannel"
+                                  connection-factory="connectionFactory"
+                                  destination="my.inbound.queue"/>
 </beans>
