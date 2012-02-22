@@ -48,7 +48,7 @@
 		<spring.mobile.version>1.0.0.M3</spring.mobile.version>
 		<spring.social.version>1.0.0.BUILD-SNAPSHOT</spring.social.version>
 		<spring.security.version>3.1.0.CI-SNAPSHOT</spring.security.version>
-		<spring.version>3.1.0.RELEASE</spring.version>
+		<spring.version>3.1.1.RELEASE</spring.version>
 		<tomcat.version>6.0.32</tomcat.version>
 		<xbean.version>3.9</xbean.version>
 		<wtp.version>2.0</wtp.version>

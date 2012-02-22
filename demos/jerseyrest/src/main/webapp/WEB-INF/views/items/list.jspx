@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_gordondickens_jerseyrest_domain_Item" items="${items}" z="NKvtk5gSpIpCy5Wvo2ELZiu4qLc=">
+        <table:table data="${items}" id="l_com_gordondickens_jerseyrest_domain_Item" path="/items" z="E2uf2W3J956Ivy2KU+2Ggl1IP8k=">
+            <table:column id="c_com_gordondickens_jerseyrest_domain_Item_name" property="name" z="kPXI39iG01G1AFbTfpPWhAv7x6M="/>
+            <table:column id="c_com_gordondickens_jerseyrest_domain_Item_description" property="description" z="Ls18ippwVhSpG7XolFYG9tG5kto="/>
+        </table:table>
+    </page:list>
+</div>
