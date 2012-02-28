@@ -4,19 +4,20 @@ package com.gordondickens.jerseyrest;
 import com.gordondickens.jerseyrest.domain.Item;
 import com.gordondickens.jerseyrest.service.ItemService;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
@@ -49,6 +50,22 @@ public class ItemServiceTests {
         list.add(new StringHttpMessageConverter());
         restTemplate.setMessageConverters(list);
 
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.TEXT_PLAIN);
+
+        List<MediaType> mediaTypes = new ArrayList<MediaType>();
+        mediaTypes.add(MediaType.TEXT_PLAIN);
+        headers.setAccept(mediaTypes);
+
+        Item item = new Item();
+        item.setDescription("Super Duper Sample Item");
+        item.setName("The Test Item");
+
+
+        HttpEntity<Item> httpEntity = new HttpEntity<Item>(item, headers);
+
+
     }
 
 //    @Ignore
@@ -79,13 +96,8 @@ public class ItemServiceTests {
 
     @Test
     public void testRestClientGet() {
-        Item item = new Item();
-        item.setDescription("Test Description 1");
-        item.setName("Test Name 1");
-
-        itemService.saveItem(item);
-
-        logger.debug("******** SET UP TEST RECORD: {} ********", item);
+        Item item = createItem();
+        logger.debug("******** TESTING ********");
 
         ResponseEntity<String> response = restTemplate.getForEntity(
                 BASE_URI + "/" + item.getId(), String.class);
@@ -94,6 +106,19 @@ public class ItemServiceTests {
 
         assertNotNull(response.getBody());
         logger.debug("********** Job Request Response: {}", response.getBody());
+    }
+
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    protected Item createItem() {
+
+        Item item = new Item();
+        item.setDescription("Test Description 1");
+        item.setName("Test Name 1");
+
+        itemService.saveItem(item);
+        logger.debug("******** SET UP TEST RECORD: {} ********", item);
+        return item;
     }
 
 }

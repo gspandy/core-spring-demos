@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.gordondickens.demos</groupId>
-    <artifactId>mockitodemo</artifactId>
+    <artifactId>mvcflashscope</artifactId>
     <packaging>war</packaging>
-    <version>1.0.1</version>
-    <name>mockitodemo</name>
+    <version>1.0.0</version>
+    <name>MVC Flash Scope Demo (war)</name>
+
 
     <properties>
-        <antlr.version>3.4</antlr.version>
-        <asm.version>4.0</asm.version>
-        <aspectj.version>1.6.12.RELEASE</aspectj.version>
+        <aspectj.version>1.6.12</aspectj.version>
         <cglib.version>2.2.2</cglib.version>
         <commons.beanutils.version>1.8.3</commons.beanutils.version>
         <commons.cli.version>1.2</commons.cli.version>
@@ -20,15 +20,11 @@
         <commons.dbcp.version>1.4</commons.dbcp.version>
         <commons.digester.version>3.2</commons.digester.version>
         <commons.exec.version>1.1</commons.exec.version>
-        <commons.fileupload.version>1.2.2</commons.fileupload.version>
         <commons.httpclient.version>3.1</commons.httpclient.version>
         <commons.io.version>2.1</commons.io.version>
         <commons.lang.version>3.1</commons.lang.version>
         <commons.net.version>3.1</commons.net.version>
         <commons.pool.version>1.5.7</commons.pool.version>
-        <derby.version>10.8.1.2</derby.version>
-        <dom4j.version>1.6.1</dom4j.version>
-        <dp4j.version>1.2</dp4j.version>
         <hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
         <hibernate.jmx.version>3.5.6-Final</hibernate.jmx.version>
         <hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
@@ -42,18 +38,12 @@
         <jodatime.version>2.1</jodatime.version>
         <jta.version>1.1</jta.version>
         <logback.version>1.0.0</logback.version>
-        <maven.ant.plugin>1.7</maven.ant.plugin>
-        <maven.aspectj.plugin>1.4</maven.aspectj.plugin>
         <maven.assembly.plugin>2.2.2</maven.assembly.plugin>
         <maven.clean.plugin>2.4.1</maven.clean.plugin>
         <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
         <maven.dependency.plugin>2.4</maven.dependency.plugin>
         <maven.deploy.plugin>2.7</maven.deploy.plugin>
-        <maven.eclipse.plugin>2.8</maven.eclipse.plugin>
         <maven.enforcer.plugin>1.0.1</maven.enforcer.plugin>
-        <maven.exec.plugin>1.2.1</maven.exec.plugin>
-        <maven.groovy.plugin>1.3</maven.groovy.plugin>
-        <maven.idea.plugin>2.2</maven.idea.plugin>
         <maven.install.plugin>2.3.1</maven.install.plugin>
         <maven.jar.plugin>2.3.1</maven.jar.plugin>
         <maven.release.plugin>2.2.2</maven.release.plugin>
@@ -61,18 +51,15 @@
         <maven.source.plugin>2.1.2</maven.source.plugin>
         <maven.surefire.plugin>2.11</maven.surefire.plugin>
         <maven.version.range>[2.2.1,3.1.0)</maven.version.range>
-        <maven.tomcat.plugin>1.1</maven.tomcat.plugin>
-        <maven.jetty.plugin>8.1.0.RC0</maven.jetty.plugin>
+        <maven.tomcat.plugin>2.0-SNAPSHOT</maven.tomcat.plugin>
+        <maven.jetty.plugin>8.1.0.v20120127</maven.jetty.plugin>
         <maven.versions.plugin>1.2</maven.versions.plugin>
         <maven.war.plugin>2.1.1</maven.war.plugin>
-        <mockito.version>1.9.0</mockito.version>
-        <powermock.version>1.4.11</powermock.version>
         <servlet.version>2.5</servlet.version>
         <slf4j.version>1.6.4</slf4j.version>
         <spring.version>3.1.1.RELEASE</spring.version>
+        <spring.data.jpa.version>1.0.3.RELEASE</spring.data.jpa.version>
         <spring.webflow.version>2.3.0.RELEASE</spring.webflow.version>
-        <tiles.version>2.2.2</tiles.version>
-        <tuckey.version>3.2.0</tuckey.version>
         <validation.version>1.0.0.GA</validation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -92,18 +79,9 @@
     </developers>
 
     <dependencies>
-        <!-- Mockito -->
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -125,11 +103,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>com.dp4j</groupId>-->
-        <!--<artifactId>dp4j</artifactId>-->
-        <!--</dependency>-->
-
         <!-- Spring dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -164,6 +137,11 @@
             <artifactId>hibernate-validator</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib-nodep</artifactId>
         </dependency>
@@ -178,22 +156,6 @@
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tiles</groupId>
-            <artifactId>tiles-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tiles</groupId>
-            <artifactId>tiles-jsp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.tuckey</groupId>
-            <artifactId>urlrewritefilter</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -235,25 +197,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Mockito -->
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>${mockito.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.powermock</groupId>
-                <artifactId>powermock-module-junit4</artifactId>
-                <version>${powermock.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.powermock</groupId>
-                <artifactId>powermock-api-mockito</artifactId>
-                <version>${powermock.version}</version>
-                <scope>test</scope>
-            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -294,6 +237,11 @@
                 <scope>provided</scope>
             </dependency>
             <!-- Spring dependencies -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring.data.jpa.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-web</artifactId>
@@ -510,26 +458,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.apache.tiles</groupId>
-                <artifactId>tiles-core</artifactId>
-                <version>${tiles.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>commons-digester</groupId>
-                        <artifactId>commons-digester</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.tiles</groupId>
-                <artifactId>tiles-jsp</artifactId>
-                <version>${tiles.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-digester3</artifactId>
                 <version>${commons.digester.version}</version>
@@ -554,29 +482,6 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons.lang.version}</version>
             </dependency>
-
-            <dependency>
-                <groupId>commons-fileupload</groupId>
-                <artifactId>commons-fileupload</artifactId>
-                <version>${commons.fileupload.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.tuckey</groupId>
-                <artifactId>urlrewritefilter</artifactId>
-                <version>${tuckey.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
@@ -593,35 +498,12 @@
                 <artifactId>joda-time</artifactId>
                 <version>${jodatime.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.antlr</groupId>
-                <artifactId>antlr</artifactId>
-                <version>${antlr.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm</artifactId>
-                <version>${asm.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>dom4j</groupId>
-                <artifactId>dom4j</artifactId>
-                <version>${dom4j.version}</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>${maven.exec.plugin}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -654,43 +536,113 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-idea-plugin</artifactId>
-                <version>${maven.idea.plugin}</version>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-                    <dependenciesAsLibraries>true</dependenciesAsLibraries>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>${maven.eclipse.plugin}</version>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-                    <wtpversion>2.0</wtpversion>
-                    <additionalBuildcommands>
-                        <buildCommand>
-                            <name>org.springframework.ide.eclipse.core.springbuilder</name>
-                        </buildCommand>
-                    </additionalBuildcommands>
-                    <additionalProjectnatures>
-                        <projectnature>org.springframework.ide.eclipse.core.springnature
-                        </projectnature>
-                    </additionalProjectnatures>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>${maven.tomcat.plugin}</version>
+                <configuration>
+                    <systemProperties>
+                        <com.sun.management.jmxremote>true</com.sun.management.jmxremote>
+                        <com.sun.management.jmxremote.port>8050</com.sun.management.jmxremote.port>
+                        <com.sun.management.jmxremote.ssl>false</com.sun.management.jmxremote.ssl>
+                        <com.sun.management.jmxremote.authenticate>false</com.sun.management.jmxremote.authenticate>
+                        <java.util.logging.manager>org.apache.juli.ClassLoaderLogManager</java.util.logging.manager>
+                        <logback.ContextSelector>JNDI</logback.ContextSelector>
+                    </systemProperties>
+                    <!--<path>/</path> -->
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>jcl-over-slf4j</artifactId>
+                        <version>${slf4j.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                        <version>${slf4j.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>jul-to-slf4j</artifactId>
+                        <version>${slf4j.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                        <version>${logback.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-access</artifactId>
+                        <version>${logback.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${maven.jetty.plugin}</version>
+                <configuration>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>logback.configurationFile</name>
+                            <value>./src/main/resources/logback.xml</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>com.sun.management.jmxremote</name>
+                            <value>true</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>com.sun.management.jmxremote.port</name>
+                            <value>8050</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>com.sun.management.jmxremote.ssl</name>
+                            <value>false</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>com.sun.management.jmxremote.authenticate</name>
+                            <value>false</value>
+                        </systemProperty>
+                    </systemProperties>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>jcl-over-slf4j</artifactId>
+                        <version>${slf4j.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                        <version>${slf4j.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>jul-to-slf4j</artifactId>
+                        <version>${slf4j.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                        <version>${logback.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-access</artifactId>
+                        <version>${logback.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -726,8 +678,6 @@
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
-                                        <exclude>antlr</exclude>
-                                        <exclude>asm</exclude>
                                         <exclude>commons-exec</exclude>
                                         <exclude>commons-lang</exclude>
                                         <exclude>commons-digester</exclude>
@@ -752,32 +702,4 @@
             </plugin>
         </plugins>
     </build>
-
-
-    <profiles>
-        <profile>
-            <id>fast</id>
-            <properties>
-                <skipTests>true</skipTests>
-            </properties>
-        </profile>
-        <profile>
-            <id>strict</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <skipTests>false</skipTests>
-                <failIfNoTests>true</failIfNoTests>
-                <maven.test.failure.ignore>false</maven.test.failure.ignore>
-            </properties>
-        </profile>
-        <profile>
-            <id>ignorefail</id>
-            <properties>
-                <maven.test.failure.ignore>true</maven.test.failure.ignore>
-                <skipTests>false</skipTests>
-            </properties>
-        </profile>
-    </profiles>
 </project>

@@ -20,7 +20,6 @@ import java.util.List;
 
 @Service
 @Transactional
-@Component
 @Path("/rest")
 public class ItemServiceImpl implements ItemService {
     private static final Logger logger = LoggerFactory.getLogger(ItemServiceImpl.class);

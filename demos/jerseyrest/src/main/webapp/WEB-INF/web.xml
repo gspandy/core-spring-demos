@@ -81,7 +81,7 @@
 
     <!-- JERSEY SERVLET -->
     <servlet>
-        <servlet-name>Jersey Spring Web Application</servlet-name>
+        <servlet-name>Jersey-Spring</servlet-name>
         <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
         <!-- The following initialization parameter is only required for registering
               Jersey managed classes. Spring-managed classes are automatically registered. -->
@@ -97,7 +97,7 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Jersey Spring Web Application</servlet-name>
+        <servlet-name>Jersey-Spring</servlet-name>
         <url-pattern>/ws/*</url-pattern>
     </servlet-mapping>
 
