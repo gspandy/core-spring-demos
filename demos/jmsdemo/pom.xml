@@ -26,7 +26,7 @@
 		<aspectj.version>1.6.12.RELEASE</aspectj.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<java.version>1.6</java.version>
-		<logback.version>1.0.0</logback.version>
+		<logback.version>1.0.1</logback.version>
 <!-- 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin> -->
 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin>
 		<maven.assembly.plugin>2.2.2</maven.assembly.plugin>
@@ -35,7 +35,7 @@
 		<maven.dependency.plugin>2.4</maven.dependency.plugin>
 		<maven.deploy.plugin>2.7</maven.deploy.plugin>
 		<maven.eclipse.plugin>2.7</maven.eclipse.plugin>
-<!-- 		<maven.eclipse.plugin>2.8</maven.eclipse.plugin> -->
+<!-- 		<maven.eclipse.plugin>2.9</maven.eclipse.plugin> -->
 		<maven.idea.plugin>2.2</maven.idea.plugin>
 		<maven.resources.plugin>2.5</maven.resources.plugin>
 		<maven.source.plugin>2.1.2</maven.source.plugin>

@@ -16,7 +16,7 @@
 		<commons.codec.version>1.4</commons.codec.version>
 		<commons.collections.version>3.2.1</commons.collections.version>
 		<commons.dbcp.version>1.4</commons.dbcp.version>
-		<commons.io.version>2.1</commons.io.version>
+		<commons.io.version>2.3</commons.io.version>
 		<commons.lang.version>2.5</commons.lang.version>
 		<commons.net.version>3.0</commons.net.version>
 		<ecj.version>3.5.1</ecj.version>
@@ -27,13 +27,13 @@
 		<jdom.version>1.1</jdom.version>
 		<jodatime.version>1.6.2</jodatime.version>
 		<junit.version>4.8.2</junit.version>
-		<logback.version>1.0.0</logback.version>
+		<logback.version>1.0.1</logback.version>
 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin>
 		<maven.assembly.plugin>2.2.2</maven.assembly.plugin>
 		<maven.clean.plugin>2.4.1</maven.clean.plugin>
 		<maven.compiler.plugin>2.3.2</maven.compiler.plugin>
 		<maven.dependency.plugin>2.1</maven.dependency.plugin>
-		<maven.eclipse.plugin>2.8</maven.eclipse.plugin>
+		<maven.eclipse.plugin>2.9</maven.eclipse.plugin>
 		<maven.enforcer.plugin>1.0</maven.enforcer.plugin>
 		<maven.idea.plugin>2.2</maven.idea.plugin>
 		<maven.jar.plugin>2.3.1</maven.jar.plugin>
@@ -50,7 +50,7 @@
 		<spring.security.version>3.1.0.CI-SNAPSHOT</spring.security.version>
 		<spring.version>3.1.1.RELEASE</spring.version>
 		<tomcat.version>6.0.32</tomcat.version>
-		<xbean.version>3.9</xbean.version>
+		<xbean.version>3.10</xbean.version>
 		<wtp.version>2.0</wtp.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

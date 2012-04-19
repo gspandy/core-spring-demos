@@ -1,5 +1,6 @@
 package com.gordondickens.sample;
 
+import com.gordondickens.SimpleBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.inject.Inject;
 import java.lang.annotation.Annotation;
 
 //Equivalent to: @ContextConfiguration("classpath:/com/gordondickens/sample/UtilsTest-context.xml")
@@ -43,6 +45,9 @@ public class BeansInContextTests {
 
     @Autowired
     BeanFactory beanFactory;
+
+    @Inject
+    SimpleBean qsdfsdfsdfsuickBean2;
 
     @Test
     public void showBeansInContext() {

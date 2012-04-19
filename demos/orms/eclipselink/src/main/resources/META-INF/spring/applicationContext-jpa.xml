@@ -9,4 +9,9 @@
 
     <repositories base-package="com.gordondickens.orm"/>
 
+    <auditing auditor-aware-ref="auditorAware"/>
+
+    <beans:bean id="auditorAware" class="com.gordondickens.orm.auditing.AuditorAwareImpl"/>
+
+
 </beans:beans>

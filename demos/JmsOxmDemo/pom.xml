@@ -29,15 +29,15 @@
         <jms.version>1.1.1</jms.version>
         <slf4j.version>1.6.4</slf4j.version>
         <activemq.version>5.5.1</activemq.version>
-        <logback.version>1.0.0</logback.version>
-        <xbean.version>3.9</xbean.version>
+        <logback.version>1.0.1</logback.version>
+        <xbean.version>3.10</xbean.version>
         <jaxb.version>2.2.4</jaxb.version>
         <commons.lang.version>3.1</commons.lang.version>
-        <commons.net.version>3.0.1</commons.net.version>
+        <commons.net.version>3.1</commons.net.version>
         <maven.clean.plugin>2.4.1</maven.clean.plugin>
         <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
         <maven.dependency.plugin>2.4</maven.dependency.plugin>
-        <maven.eclipse.plugin>2.8</maven.eclipse.plugin>
+        <maven.eclipse.plugin>2.9</maven.eclipse.plugin>
         <maven.idea.plugin>2.2</maven.idea.plugin>
         <maven.resources.plugin>2.5</maven.resources.plugin>
         <maven.source.plugin>2.1.2</maven.source.plugin>

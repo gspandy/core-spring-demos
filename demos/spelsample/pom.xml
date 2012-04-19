@@ -19,15 +19,15 @@
 		<commons.digester.version>2.1</commons.digester.version>
 		<commons.fileupload.version>1.2.2</commons.fileupload.version>
 		<commons.httpclient.version>3.1</commons.httpclient.version>
-		<commons.io.version>2.1</commons.io.version>
+		<commons.io.version>2.3</commons.io.version>
 		<commons.lang.version>2.6</commons.lang.version>
-		<commons.net.version>3.0.1</commons.net.version>
+		<commons.net.version>3.1</commons.net.version>
 		<commons.pool.version>1.5.7</commons.pool.version>
 		<hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
 		<hibernate.jmx.version>3.5.6-Final</hibernate.jmx.version>
 		<hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
 		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
-		<hibernate.version>3.6.9.Final</hibernate.version>
+		<hibernate.version>3.6.10.Final</hibernate.version>
 		<hsqldb.version>2.2.8</hsqldb.version>
 		<jackson.version>1.9.0</jackson.version>
 		<java.version>1.6</java.version>
@@ -36,7 +36,7 @@
 		<junit.version>4.10</junit.version>
 		<jodatime.version>1.6.2</jodatime.version>
 		<jta.version>1.1</jta.version>
-		<logback.version>1.0.0</logback.version>
+		<logback.version>1.0.1</logback.version>
 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin>
 		<maven.assembly.plugin>2.2.2</maven.assembly.plugin>
 		<maven.clean.plugin>2.4.1</maven.clean.plugin>
@@ -60,7 +60,7 @@
 		<slf4j.version>1.6.4</slf4j.version>
 		<spring.version>3.1.1.RELEASE</spring.version>
 		<spring.security.version>3.0.5.RELEASE</spring.security.version>
-		<spring.webflow.version>2.3.0.RELEASE</spring.webflow.version>
+		<spring.webflow.version>2.3.1.RELEASE</spring.webflow.version>
 		<tiles.version>2.2.2</tiles.version>
 		<tuckey.version>3.1.0</tuckey.version>
 		<validation.version>1.0.0.GA</validation.version>

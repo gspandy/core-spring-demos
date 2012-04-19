@@ -15,6 +15,9 @@
 
 	<bean class="com.gordondickens.sample.ExampleServiceToo" />
 
+
+    <bean id="quickBean" class="com.gordondickens.SimpleBean"/>
+
 	<!-- <context:component-scan base-package="com.nobody" />
 		<import resource="classpath:/META-INF/spring/other-app-context.xml" />
 

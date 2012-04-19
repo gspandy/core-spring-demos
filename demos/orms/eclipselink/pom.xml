@@ -5,18 +5,18 @@
     <parent>
         <groupId>com.gordondickens.orm</groupId>
         <artifactId>orms</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
-    <groupId>com.gordondickens.orm</groupId>
     <artifactId>EclipseLink</artifactId>
+
     <packaging>jar</packaging>
-    <version>1.0.0</version>
     <name>OrmEclipseLink</name>
 
     <properties>
-        <eclipselink.version>2.3.2</eclipselink.version>
-        <eclipse.persistence.version>2.0.3</eclipse.persistence.version>
+        <eclipselink.version>2.4.0-M17.2</eclipselink.version>
+        <!--<eclipselink.version>2.3.2</eclipselink.version>-->
+        <eclipselink.persistence.version>2.0.3</eclipselink.persistence.version>
     </properties>
 
     <dependencies>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
-            <version>${eclipse.persistence.version}</version>
+            <version>${eclipselink.persistence.version}</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>

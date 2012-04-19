@@ -18,6 +18,7 @@
     <logger name="org.apache.openjpa" level="debug" />
     <logger name="org.springframework.orm" level="warn" />
     <logger name="org.springframework.jdbc" level="warn" />
+    <logger name="org.springframework.data.jpa" level="trace" />
 
     <!-- Import configuration to log db & orm to file -->
     <include resource="logJpaToFile.xml" />
