@@ -29,7 +29,7 @@
         <javassist.version>3.16.1-GA</javassist.version>
         <jta.version>1.1</jta.version>
         <junit.version>4.10</junit.version>
-        <logback.version>1.0.1</logback.version>
+        <logback.version>1.0.2</logback.version>
         <maven.assembly.plugin>2.3</maven.assembly.plugin>
         <maven.clean.plugin>2.4.1</maven.clean.plugin>
         <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
@@ -52,8 +52,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <servlet.version>2.5</servlet.version>
         <slf4j.version>1.6.4</slf4j.version>
-        <!--<spring.data.jpa.version>1.0.3.RELEASE</spring.data.jpa.version>-->
-        <spring.data.jpa.version>1.1.0.BUILD-SNAPSHOT</spring.data.jpa.version>
+        <spring.data.jpa.version>1.0.3.RELEASE</spring.data.jpa.version>
+        <!--<spring.data.jpa.version>1.1.0.BUILD-SNAPSHOT</spring.data.jpa.version>-->
         <spring.version>3.1.1.RELEASE</spring.version>
         <validation.version>1.0.0.GA</validation.version>
         <wtp.version>2.0</wtp.version>

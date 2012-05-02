@@ -30,7 +30,7 @@
         <jms.version>1.1.1</jms.version>
         <jta.version>1.1</jta.version>
         <junit.version>4.10</junit.version>
-        <logback.version>1.0.1</logback.version>
+        <logback.version>1.0.2</logback.version>
         <maven.clean.plugin>2.4.1</maven.clean.plugin>
         <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
         <maven.dependency.plugin>2.4</maven.dependency.plugin>

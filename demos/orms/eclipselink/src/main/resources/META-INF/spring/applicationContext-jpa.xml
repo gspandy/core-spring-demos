@@ -7,7 +7,7 @@
                   http://www.springframework.org/schema/data/jpa
                   http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <repositories base-package="com.gordondickens.orm"/>
+    <repositories base-package="com.gordondickens.orm.repository"/>
 
     <auditing auditor-aware-ref="auditorAware"/>
 

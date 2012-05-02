@@ -1,6 +1,7 @@
 package com.gordondickens.orm.domain;
 
 import com.gordondickens.orm.service.EmployeeService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -36,10 +37,31 @@ public class EmployeeIntegrationTest {
         assertNotNull("Employee MUST exist", employee);
 //        assertNotNull("Employee MUST have PK", employee.getId());
         logger.debug("Employee {} Saved", employee.getId());
-logger.debug("***** \n\t {} \n ******", employee.toString());
+        logger.debug("***** \n\t {} \n ******", employee.toString());
 
         Employee employee1 = employeeService.findEmployee(employee.getId());
         assertSame("Employee Must be Found by ID", employee1.getId(), employee.getId());
     }
+
+    @Ignore
+    @Test(expected = org.springframework.transaction.TransactionSystemException.class)
+    public void testUniqueConstraint() {
+        Employee employee = new Employee();
+        employee.setFirstName("Cletus");
+        employee.setLastName("Fetus");
+        employee.setUsername("cfetus");
+
+        employeeService.saveEmployee(employee);
+        assertNotNull("Employee MUST exist", employee);
+
+        employee = new Employee();
+        employee.setFirstName("Bobby");
+        employee.setLastName("Bobber");
+        employee.setUsername("cfetus");
+
+        employeeService.saveEmployee(employee);
+        assertNotNull("Employee MUST exist", employee);
+    }
+
 }
 

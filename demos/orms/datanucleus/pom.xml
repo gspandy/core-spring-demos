@@ -14,7 +14,7 @@
 
     <properties>
         <datanucleus.version>3.0.9</datanucleus.version>
-        <jdo.version>3.0</jdo.version>
+        <jdo.version>3.0.1</jdo.version>
         <!--<maven.datanucleus.plugin>3.0.1</maven.datanucleus.plugin>-->
         <maven.datanucleus.plugin>3.1.0-m1</maven.datanucleus.plugin>
     </properties>

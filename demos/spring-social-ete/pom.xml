@@ -27,7 +27,7 @@
 		<jdom.version>1.1</jdom.version>
 		<jodatime.version>1.6.2</jodatime.version>
 		<junit.version>4.8.2</junit.version>
-		<logback.version>1.0.1</logback.version>
+		<logback.version>1.0.2</logback.version>
 		<maven.aspectj.plugin>1.4</maven.aspectj.plugin>
 		<maven.assembly.plugin>2.2.2</maven.assembly.plugin>
 		<maven.clean.plugin>2.4.1</maven.clean.plugin>

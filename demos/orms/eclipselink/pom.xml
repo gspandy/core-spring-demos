@@ -14,9 +14,9 @@
     <name>OrmEclipseLink</name>
 
     <properties>
-        <eclipselink.version>2.4.0-M17.2</eclipselink.version>
+        <eclipselink.version>2.4.0-M18</eclipselink.version>
         <!--<eclipselink.version>2.3.2</eclipselink.version>-->
-        <eclipselink.persistence.version>2.0.3</eclipselink.persistence.version>
+        <eclipselink.persistence.version>2.1.0.v201201251030</eclipselink.persistence.version>
     </properties>
 
     <dependencies>

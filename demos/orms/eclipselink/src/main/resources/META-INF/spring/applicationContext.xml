@@ -59,4 +59,7 @@
     </bean>
 
     <bean id="employeeService" class="com.gordondickens.orm.service.EmployeeServiceImpl"/>
+
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
 </beans>
